@@ -2,9 +2,13 @@ applications:
 - memory: 512M
   services:
   - DeskBuddy.cloudantNoSQLDB
+  - dashDB-DeskBuddy
   env:
     NODE_RED_STORAGE_NAME: DeskBuddy.cloudantNoSQLDB
 declared-services:
   DeskBuddy.cloudantNoSQLDB:
     label: cloudantNoSQLDB
     plan:  Lite
+  dashDB-DeskBuddy:
+    label: dashDB
+    plan: Entry
