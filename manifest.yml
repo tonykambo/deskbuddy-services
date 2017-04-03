@@ -1,0 +1,10 @@
+applications:
+- memory: 512M
+  services:
+  - DeskBuddy.cloudantNoSQLDB
+  env:
+    NODE_RED_STORAGE_NAME: DeskBuddy.cloudantNoSQLDB
+declared-services:
+  DeskBuddy.cloudantNoSQLDB:
+    label: cloudantNoSQLDB
+    plan:  Lite
