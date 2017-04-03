@@ -31,6 +31,12 @@ Create the Cloudant service:
 cf create-service cloudantNoSQLDB Lite DeskBuddy.cloudantNoSQLDB
 ```
 
+Create the DashDB service:
+
+```
+cf create-service dashDB Entry dashDB-deskbuddy
+```
+
 Modify package.json:
 
 ```
@@ -70,12 +76,16 @@ applications:
 - memory: 512M
   services:
   - DeskBuddy.cloudantNoSQLDB
+  - dashDB-deskbuddy
   env:
     NODE_RED_STORAGE_NAME: DeskBuddy.cloudantNoSQLDB
 declared-services:
   DeskBuddy.cloudantNoSQLDB:
     label: cloudantNoSQLDB
-    plan:  Lite  
+    plan:  Lite 
+  dashDB-deskbuddy:
+  	 label: dashdb
+  	 plan: Entry 
 ```   
 
 Create the IoT service
