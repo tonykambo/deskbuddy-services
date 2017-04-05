@@ -57,6 +57,7 @@ Modify package.json:
         "node-red-node-openwhisk":"0.x",
         "node-red-node-cf-cloudant":"0.x",
         "node-red-contrib-scx-ibmiotapp":"0.x",
+        "node-red-contrib-ibm-watson-iot":"0.x",
         "node-red-nodes-cf-sqldb-dashdb":"0.x"
     },
     "scripts": {
@@ -87,6 +88,37 @@ declared-services:
   	 label: dashdb
   	 plan: Entry 
 ```   
+
+Add dashDB to local install:
+
+```
+npm install node-red-nodes-cf-sqldb-dashdb
+```
+
+Add Watson IoT to local install:
+
+```
+npm install node-red-contrib-ibm-watson-iot
+```
+
+Add IBM IoT to local install:
+
+```
+npm install node-red-contrib-scx-ibmiotapp
+```
+
+Create .cfignore with the following content:
+
+```
+node_modules
+```
+
+Create .gitignore with the following content:
+
+```
+node_modules
+.config.json
+```
 
 Create the IoT service
 
