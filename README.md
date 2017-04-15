@@ -131,3 +131,18 @@ Launch Node-RED from local workstation
 ```
 node-red ./deskbuddy.json -s ./settings.js -u ./
 ```
+
+Create dashDB Tables
+
+Climate Table
+
+```
+create table climate
+(
+	deviceId VARCHAR (36) NOT NULL,
+	dateMeasured TIMESTAMP (0) NOT NULL,
+	temperature DECIMAL (19,2),
+	humidity DECIMAL (19,2),
+	heatIndex DECIMAL (19,2)
+) ORGANIZE BY ROW;
+```
