@@ -146,3 +146,28 @@ create table climate
 	heatIndex DECIMAL (19,2)
 ) ORGANIZE BY ROW;
 ```
+
+## Useful SQL statements
+
+```
+drop table climate;
+
+select * from climate;
+
+DELETE FROM CLIMATE;
+
+select * from climate where deviceid='nodemcu1001' order by datemeasured ASC;
+
+insert into climate (deviceId,dateMeasured,temperature,humidity,heatIndex)
+VALUES ('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 9:00:00','YYYY-MM-DD HH24:MI:SS'),19.5,45.4,19.2),
+('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 10:00:00','YYYY-MM-DD HH24:MI:SS'),20.3,46.2,20.1),
+('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 11:00:00','YYYY-MM-DD HH24:MI:SS'),21.9,45.2,21.3),
+('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 12:00:00','YYYY-MM-DD HH24:MI:SS'),23.2,46.3,23.2),
+('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 13:00:00','YYYY-MM-DD HH24:MI:SS'),28.7,42.2,26.1),
+('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 14:00:00','YYYY-MM-DD HH24:MI:SS'),26.3,49.2,27.2),
+('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 15:00:00','YYYY-MM-DD HH24:MI:SS'),24.5,43.2,24.5),
+('nodemcu1001',TIMESTAMP_FORMAT('2017-4-15 16:00:00','YYYY-MM-DD HH24:MI:SS'),22.1,42.2,22.4);
+
+DELETE FROM climate
+WHERE temperature=22.1 OR temperature=24.5 OR temperature=26.3 OR temperature=28.7;
+```
