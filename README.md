@@ -139,13 +139,33 @@ Climate Table
 ```
 create table climate
 (
-	deviceId VARCHAR (36) NOT NULL,
-	dateMeasured TIMESTAMP (0) NOT NULL,
-	temperature DECIMAL (19,2),
-	humidity DECIMAL (19,2),
-	heatIndex DECIMAL (19,2)
+    deviceId VARCHAR (36) NOT NULL,
+    dateMeasured TIMESTAMP (0) NOT NULL,
+    temperature DECIMAL (19,2),
+    humidity DECIMAL (19,2),
+    heatIndex DECIMAL (19,2),
+    PRIMARY KEY (dateMeasured)
 ) ORGANIZE BY ROW;
 ```
+
+### Upgrading Node-RED and Node.js
+
+```
+sudo npm cache clean
+sudo npm install -g --unsafe-perm node-red
+sudo npm install -g n
+sudo n stable
+```
+
+Change to the deskbuddy service directory to upgrade the dashdb driver.
+
+```
+npm install node-red-nodes-cf-sqldb-dashdb
+``` 
+
+## Node-RED Development
+
+Use the IBM IoT App Node for Node-RED, not the Watson IoT node. The Watson IoT node is for devices and gateways to allow them to send events and receive commands. The IBM IoT App Node is for applications that is used to receive device events and send commands back to the device. 
 
 ## Useful SQL statements
 

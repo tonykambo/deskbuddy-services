@@ -1,22 +1,22 @@
 {
-    "name"         : "DeskBuddy",
-    "version"      : "0.6.0",
+    "name": "DeskBuddy",
+    "version": "0.6.0",
     "dependencies": {
-        "when": "~3.x",
-        "nano": "6.2.x",
         "bcrypt": "1.0.2",
-        "cfenv":"~1.0.0",
-        "express":"4.x",
-        "body-parser":"1.x",
-        "http-shutdown":"1.2.0",
+        "body-parser": "1.x",
+        "cfenv": "~1.0.0",
+        "express": "4.x",
+        "http-shutdown": "1.2.0",
+        "nano": "6.2.x",
         "node-red": "0.x",
-        "node-red-bluemix-nodes":"1.x",
-        "node-red-node-watson":"0.x",
-        "node-red-node-openwhisk":"0.x",
-        "node-red-node-cf-cloudant":"0.x",
-        "node-red-contrib-scx-ibmiotapp":"0.x",
-        "node-red-contrib-ibm-watson-iot":"0.x",
-        "node-red-nodes-cf-sqldb-dashdb":"0.x"
+        "node-red-bluemix-nodes": "1.x",
+        "node-red-contrib-ibm-watson-iot": "0.x",
+        "node-red-contrib-scx-ibmiotapp": "0.x",
+        "node-red-node-cf-cloudant": "0.x",
+        "node-red-node-openwhisk": "0.x",
+        "node-red-node-watson": "0.x",
+        "node-red-nodes-cf-sqldb-dashdb": "^0.2.24",
+        "when": "~3.x"
     },
     "scripts": {
         "start": "node --max-old-space-size=384 index.js --settings ./bluemix-settings.js -v"
